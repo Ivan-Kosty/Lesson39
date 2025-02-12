@@ -2,7 +2,7 @@
 
 void bubble_sort(int* array, int length) 
 {
-	int count = 0;
+	
 	for (int i = 1; i < length - 1 - i; i++)
 	{
 		bool flag = true;
@@ -23,18 +23,21 @@ void bubble_sort(int* array, int length)
 }
 
 //O(N^2)
-void selected_sort(int* vector, int length) {
+int selected_sort(int* vector, int length) {
 	for (int j = 0; j < length; j++)
 	{
+		int count = 0;
 		int index = j;
 		for (int i = j + 1; i < length; i++)
 		{
 			if (vector[i] < vector[index]) {
 				index = i;
 			}
+			count++;
 		}
 		int t = vector[j];
 		vector[j] = vector[index];
 		vector[index] = t;
 	}
+	return 0;
 }
