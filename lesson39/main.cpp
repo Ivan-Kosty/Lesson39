@@ -5,7 +5,7 @@
 using namespace std;
 
 #define SIZE 10
-
+//Сдесь могла бы быть ваша реклама! :)
 int main()
 {
 	int vector[]{ 10, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
