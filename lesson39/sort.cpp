@@ -1,17 +1,25 @@
 #include "sort.h"
 
-void bubble_sort(int* array, int length) 
+int bubble_sort(int* array, int length) 
 {
-	for (int i = 1; i < length; i++)
+	int count = 0;
+	for (int i = 1; i < length - 1 - i; i++)
 	{
-		for (int g = 0; g < length - 1	; g++)
+		bool flag = true;
+		for (int g = 0; g < length - 1; g++)
 		{
-			if (array[g] < array[g + 1])
+			if (array[g] > array[g + 1])
 			{
 				int t = array[g + 1];
 				array[g + 1] = array[g];
 				array[g] = t;
+				flag = false;
 			}
+			count++;
+		}
+		if (flag) {
+			break;
 		}
 	}
+	return count;
 }
