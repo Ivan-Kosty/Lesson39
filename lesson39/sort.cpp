@@ -1,6 +1,6 @@
 #include "sort.h"
 
-int bubble_sort(int* array, int length) 
+void bubble_sort(int* array, int length) 
 {
 	int count = 0;
 	for (int i = 1; i < length - 1 - i; i++)
@@ -15,11 +15,26 @@ int bubble_sort(int* array, int length)
 				array[g] = t;
 				flag = false;
 			}
-			count++;
 		}
 		if (flag) {
 			break;
 		}
 	}
-	return count;
+}
+
+//O(N^2)
+void selected_sort(int* vector, int length) {
+	for (int j = 0; j < length; j++)
+	{
+		int index = j;
+		for (int i = j + 1; i < length; i++)
+		{
+			if (vector[i] < vector[index]) {
+				index = i;
+			}
+		}
+		int t = vector[j];
+		vector[j] = vector[index];
+		vector[index] = t;
+	}
 }
